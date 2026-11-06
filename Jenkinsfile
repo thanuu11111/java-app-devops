@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Publish to Nexus') {
             steps {
-                sh 'mvn deploy'
+                sh '/opt/apache-maven-3.9.10/bin/mvn deploy'
             }
         }
 
