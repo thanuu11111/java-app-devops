@@ -5,10 +5,6 @@ pipeline {
         jdk 'java17'
     }
 
-    environment {
-        PATH+MAVEN = '/opt/apache-maven-3.9.10/bin'
-    }
-
     stages {
         stage('Build') {
             steps {
@@ -25,8 +21,8 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'java -version'
-                sh 'mvn -version'
-                sh 'mvn clean package'
+                sh '/opt/apache-maven-3.9.10/bin/mvn -version'
+                sh '/opt/apache-maven-3.9.10/bin/mvn clean package'
             }
         }
 
