@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+    stages{
+        stage('Build'){
+            step{
+                Build Jar package
+            }
+        }
+        stage('Test'){
+            step{
+                echo 'running tests'
+            }
+        }    
+        stage('Package'){
+            step{
+                sh 'mvn cleanpackage'
+            }
+        }    
+        stage('Post-Build'){
+            step{
+                echo 'Build successful..'
+            }
+        }
+       // stage('Publish in Nexus repo'){
+          //  step{
+          //      sh 'mvn deploy'//
+          //  }
+       // }
+    }
+}
