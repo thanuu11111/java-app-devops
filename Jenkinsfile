@@ -25,6 +25,11 @@ pipeline {
                 sh '/opt/apache-maven-3.9.10/bin/mvn clean package'
             }
         }
+        stage('Publish to Nexus') {
+            steps {
+                sh 'mvn deploy'
+            }
+        }
 
         stage('Post-Build') {
             steps {
