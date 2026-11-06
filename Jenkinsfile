@@ -2,27 +2,27 @@ pipeline{
     agent any
     stages{
         stage('Build'){
-            step{
+            steps{
                 echo 'Build Jar package'
             }
         }
         stage('Test'){
-            step{
+            steps{
                 echo 'running tests'
             }
         }    
         stage('Package'){
-            step{
+            steps{
                 sh 'mvn clean package'
             }
         }    
         stage('Post-Build'){
-            step{
+            steps{
                 echo 'Build successful..'
             }
         }
        // stage('Publish in Nexus repo'){
-          //  step{
+          //  steps{
           //      sh 'mvn deploy'//
           //  }
        // }
