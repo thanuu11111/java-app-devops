@@ -40,5 +40,11 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id> <!-- Match this ID with the settings.xml -->
+            <url>http://13.54.111.158:8081/repository/java_package/</url>
+        </repository>
+</distributionManagement>
 </project>
 
